@@ -24,7 +24,7 @@ Pour l'exécuter il suffit de taper la commande suivante :
 ##Import des données dans Cassandra
 Afin d'importer les données contenu dans les 3 fichiers csv, il suffit de lancer l'exécution de import_from_csv_to_cassandra.py de la façon suivante :
 ```
-  python your_path/import_cassandra.py hosts port
+  python your_path/import_from_csv_to_cassandra.py hosts port
 ```
 afin de renseigner plusieurs hosts, il suffit de les séparer par des ,
 
