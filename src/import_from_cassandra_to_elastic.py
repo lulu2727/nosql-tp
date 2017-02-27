@@ -7,7 +7,7 @@ from elasticsearch import Elasticsearch
 
 
 if(len(sys.argv) < 5):
-	print('Cassandra\'s hosts, Cassandra\'s port, Elasticsearch\'s hosts and ElasticSearch\'s port need to be provided as launch parameters : python your_path/import_cassandra.py cassandra_hosts cassandra_port elasticsearch_hosts elasticsearch_port')
+	print('Cassandra\'s hosts, Cassandra\'s port, Elasticsearch\'s hosts and ElasticSearch\'s port need to be provided as launch parameters : python your_path/import_from_cassandra_to_elastic.py cassandra_hosts cassandra_port elasticsearch_hosts elasticsearch_port')
 else:
 	cassandraHosts = sys.argv[1].split(',')
 	cassandraPort = sys.argv[2]
@@ -21,12 +21,12 @@ else:
 	rows = session.execute('SELECT * FROM measures')
 	for row in rows:
 		measure = {
-		'timestamp': row.time,
+		'@timestamp': row.time,
 		'station': row.station,
 		'no': row.no,
 		'no2': row.no2,
-		'tempature': row.temp,
-		'humidity': row.humi,
+		'temperature': row.temperature,
+		'humidity': row.humidity,
 		'co2': row.co2,
 		'pm10': row.pm10
 		}

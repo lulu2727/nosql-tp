@@ -20,7 +20,7 @@ def importStationData(station): #read data from a csv station file and export to
             try:
                 datetime = dateparser.parse(row['DATE'] + ' ' + row['HEURE'])
                 session.execute("""
-                INSERT INTO measures (time, station, no, no2, pm10, co2, temp, humi)
+                INSERT INTO measures (time, station, no, no2, pm10, co2, temperature, humidity)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                 """, (datetime.isoformat(), station['stationName'], convertToInt(row['NO']), convertToInt(row['NO2']), convertToInt(row['PM10']), convertToInt(row['CO2']), convertToFloat(row['TEMP']), convertToFloat(row['HUMI'])))
             except:
@@ -39,7 +39,7 @@ def convertToFloat(value):
         return None
 
 if(len(sys.argv) < 3):
-	print('Cassandra\'s hosts and Cassandra\'s port need to be provided as launch parameters : python your_path/import_cassandra.py hosts port')
+	print('Cassandra\'s hosts and Cassandra\'s port need to be provided as launch parameters : python your_path/import_from_csv_to_cassandra.py hosts port')
 else:
     hosts = sys.argv[1].split(',')
     port=sys.argv[2]

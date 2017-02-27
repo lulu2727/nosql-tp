@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS measures (
   pm10 int,
   pm25 int,
   co2 int,
-  temp decimal,
-  humi decimal,
+  temperature decimal,
+  humidity decimal,
   PRIMARY KEY (station, time)
 );
