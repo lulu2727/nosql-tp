@@ -2,15 +2,17 @@ CREATE KEYSPACE IF NOT EXISTS air_data WITH REPLICATION = { 'class' : 'SimpleStr
 
 USE air_data;
 
-CREATE TABLE air_data.measures (
-  date timestamp,
+DROP TABLE IF EXISTS measures;
+
+CREATE TABLE IF NOT EXISTS measures (
+  time timestamp,
   station text,
   no int,
   no2 int,
   pm10 int,
   pm25 int,
   co2 int,
-  temp int,
-  humi int,
-  PRIMARY KEY (station, date)
+  temp decimal,
+  humi decimal,
+  PRIMARY KEY (station, time)
 );
