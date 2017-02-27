@@ -10,7 +10,7 @@ Le fichier cql/init.cql permet d'initialiser Cassandra avec le keyspace et la ta
 Pour l'exécuter il suffit de taper la commande suivante : 
   bin/cqlsh -f ../TP/cql/init.cql
   
-![alt text](/images/cassandra-diagram.png")
+![Database model](images/cassandra-diagram.png)
   
 ##Import des données dans Cassandra
 Afin d'importer les données contenu dans les 3 fichiers csv, il suffit de lancer l'exécution de import_cassandra.py de la façon suivante :
