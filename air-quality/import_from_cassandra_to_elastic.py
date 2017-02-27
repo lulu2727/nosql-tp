@@ -7,9 +7,14 @@ from elasticsearch import Elasticsearch
 
 
 if(len(sys.argv) < 5):
-	print('A Cassandra host, Cassandra\'s port, Elasticsearch\s host and ElasticSearch\'s port need to be provided as launch parameters : python your_path/import_cassandra.py cassandra_host cassandra_port elasticsearch_host elasticsearch_port')
+	print('Cassandra\'s hosts, Cassandra\'s port, Elasticsearch\'s hosts and ElasticSearch\'s port need to be provided as launch parameters : python your_path/import_cassandra.py cassandra_hosts cassandra_port elasticsearch_hosts elasticsearch_port')
 else:
-	cluster = Cluster([sys.argv[1]], port=sys.argv[2])
+	cassandraHosts = sys.argv[1].split(',')
+	cassandraPort = sys.argv[2]
+	elasticsearchHosts = sys.argv[3].split(',')
+	elasticsearchPort = sys.argv[4]
+	
+	cluster = Cluster(], port=sys.argv[2])
 	session = cluster.connect('air_data')
 	es = Elasticsearch(hosts=[{'host':sys.argv[3], 'port':sys.argv[4]}])
 

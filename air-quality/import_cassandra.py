@@ -39,9 +39,11 @@ def convertToFloat(value):
         return None
 
 if(len(sys.argv) < 3):
-	print('A Cassandra host and Cassandra\'s port need to be provided as launch parameters : python your_path/import_cassandra.py host port')
+	print('Cassandra\'s hosts and Cassandra\'s port need to be provided as launch parameters : python your_path/import_cassandra.py hosts port')
 else:
-	cluster = Cluster([sys.argv[1]], port=sys.argv[2])
+    hosts = sys.argv[1].split(',')
+    port=sys.argv[2]
+	cluster = Cluster(hosts, port=port)
 	#Connect to the cluster and use the keyspace air_data
 	session = cluster.connect('air_data')
 
