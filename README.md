@@ -7,14 +7,18 @@ Cassandra 3.10, ElasticSearch 5.2.1 et Kibana 5.2.1 ont été utilisés dans le 
 ##Modélisation des données Cassandra
 
 Le fichier cql/init.cql permet d'initialiser Cassandra avec le keyspace et la table adéquat.
-Pour l'exécuter il suffit de taper la commande suivante : 
+Pour l'exécuter il suffit de taper la commande suivante :
+```
   bin/cqlsh -f ../TP/cql/init.cql
+```
   
 ![Database model](images/cassandra-diagram.png)
   
 ##Import des données dans Cassandra
 Afin d'importer les données contenu dans les 3 fichiers csv, il suffit de lancer l'exécution de import_cassandra.py de la façon suivante :
+```
   python your_path/import_cassandra.py hosts port
+```  
 
 ##Modélisation des données ElasticSearch
 Les données sont divisées en 3 index : un par station. Toutes les données sont cependant du même type : measure
@@ -23,7 +27,9 @@ Les colunnes de Cassandra ont été transposés à ElasticSearch avec le même n
   
 ##Import des données dans ElasticSearch depuis Cassandra
 Afin d'importer les données contenu dans Cassandra, il suffit de lancer l'exécution de import_from_cassandra_to_elastic.py de la façon suivante :
+```
   python your_path/import_from_cassandra_to_elastic.py cassandra_host cassandra_port elasticsearch_host elasticsearch_port
+```  
   
 ##Visualisation des données
 Des screenshots des visualisations qui ont peut être produites à partir des données. de TimeLion. Il est possible de visualiser la requête écrite pour les visualiations NO2 et PM10. Les autres requêtes sont très similaire
