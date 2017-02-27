@@ -11,7 +11,9 @@ Python 2.7 a été utilisé pour les étapes d'import des données. Le gestionna
 ##Modélisation des données Cassandra
 
 Toutes les données se trouvent dans la même table. Le schéma est décrit ci-dessous.
+
 ![Database model](images/cassandra-diagram.png)
+
 
 Le fichier cql/init.cql permet d'initialiser Cassandra avec le keyspace et la table adéquat.
 Pour l'exécuter il suffit de taper la commande suivante :
