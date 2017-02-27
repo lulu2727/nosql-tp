@@ -43,10 +43,10 @@ if(len(sys.argv) < 3):
 else:
     hosts = sys.argv[1].split(',')
     port=sys.argv[2]
-	cluster = Cluster(hosts, port=port)
+    cluster = Cluster(hosts, port=port)
 	#Connect to the cluster and use the keyspace air_data
-	session = cluster.connect('air_data')
+    session = cluster.connect('air_data')
 
 	# Import station data to Cassandra
-	for station in stations:
-		importStationData(station)
+    for station in stations:
+        importStationData(station)

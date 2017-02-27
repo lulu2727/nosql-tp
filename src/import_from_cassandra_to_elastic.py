@@ -13,10 +13,11 @@ else:
 	cassandraPort = sys.argv[2]
 	elasticsearchHosts = sys.argv[3].split(',')
 	elasticsearchPort = sys.argv[4]
-	
-	cluster = Cluster(], port=sys.argv[2])
+
+	cluster = Cluster(cassandraHosts, port=sys.argv[2])
 	session = cluster.connect('air_data')
-	es = Elasticsearch(hosts=[{'host':sys.argv[3], 'port':sys.argv[4]}])
+	print(elasticsearchHosts)
+	es = Elasticsearch(elasticsearchHosts, port=elasticsearchPort)
 
 	rows = session.execute('SELECT * FROM measures')
 	for row in rows:
