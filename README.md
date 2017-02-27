@@ -5,7 +5,7 @@ L'idée était de simuler l'acquisition de données issues de capteur de mesure 
 Python 2.7 a été utilisé pour les étapes d'import des données. Le gestionnaire de paquet pip est nécessaire pour gérer les dépendances. Il est nécessaire d'installer les dépandances avant de lancer une étape d'importation via les commandes : 
 ```
   cd src
-  pip install requirements.txt
+  pip install -r requirements.txt
 ```
 
 ##Modélisation des données Cassandra
@@ -16,7 +16,7 @@ Toutes les données se trouvent dans la même table. Le schéma est décrit ci-d
 
 
 Le fichier cql/init.cql permet d'initialiser Cassandra avec le keyspace et la table adéquat.
-Pour l'exécuter il suffit de taper la commande suivante :
+Pour l'exécuter il suffit de taper la commande suivante depuis le dossier cassandra :
 ```
   bin/cqlsh -f your_path/cql/init.cql
 ```
