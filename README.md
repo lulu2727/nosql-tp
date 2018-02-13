@@ -1,4 +1,4 @@
-#Rendu du workshop NoSQL
+# Rendu du workshop NoSQL
 
 L'idée était de simuler l'acquisition de données issues de capteur de mesure de qualité de l'air. L'architecture est composée d'un cluster Cassandra, d'un cluster ElasticSearch et d'un Kibana. Cassandra 3.10, ElasticSearch 5.2.1 et Kibana 5.2.1 ont été utilisés dans le cadre de ce workshop.
 
